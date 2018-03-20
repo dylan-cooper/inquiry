@@ -21,7 +21,7 @@ const Header = () => (
                     color: 'white',
                     textDecoration: 'none',
                 }}>
-                Gatsby
+                Inquiry
             </Link>
             </h1>
         </div>
