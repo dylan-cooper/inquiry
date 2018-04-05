@@ -1,6 +1,6 @@
 let observer = null;
 let board = [
-  [0, 0, 2, 3, 1, 1, 1, 1],
+  [6, 0, 2, 3, 1, 1, 1, 1],
   [1, 1, 1, 0, 1, 0, 0, 0],
   [0, 1, 0, 0, 1, 0, 1, 0],
   [0, 1, 0, 1, 1, 0, 1, 0],
@@ -36,5 +36,10 @@ export function move(fromX, fromY, toX, toY) {
 
 export function add(type, toX, toY) {
   board[toX][toY] = type;
+  emitChange();
+}
+
+export function remove(fromX, fromY) {
+  board[fromX][fromY] = 0;
   emitChange();
 }

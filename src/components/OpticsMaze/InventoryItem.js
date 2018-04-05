@@ -17,7 +17,12 @@ const source = {
   endDrag(props, monitor) {
     const dropResult = monitor.getDropResult();
     if (dropResult) {
-      add(props.val, dropResult.x, dropResult.y);
+      switch (dropResult.type) {
+        case 'square':
+          add(props.val, dropResult.x, dropResult.y);
+        case 'garbage':
+          // do nothing
+      }
     }
   }
 }
@@ -30,7 +35,7 @@ function collect(connect, monitor) {
   }
 }
 
-@DragSource(ItemTypes.MOVABLE, source, collect)
+@DragSource(ItemTypes.INVENTORY, source, collect)
 export default class InventoryItem extends Component {
   static propTypes = {
     connectDragSource: PropTypes.func.isRequired,
@@ -46,7 +51,7 @@ export default class InventoryItem extends Component {
       height: '70px',
       cursor: 'move',
       opacity: isDragging ? 0.5 : 1,
-      margin: 0
+      margin: 2,
     };
 
     const lineStyle = {
@@ -59,25 +64,25 @@ export default class InventoryItem extends Component {
     if (val == 2) {
       svg = (
         <svg style={style}>      
-          <MirrorBottomRight withLight={false}/>
+          <MirrorBottomRight />
         </svg>
       );
     } else if (val == 3) {
       svg = (
         <svg style={style}>
-          <MirrorTopLeft withLight={false} />
+          <MirrorTopLeft />
         </svg>
       );
     } else if (val == 4) {
       svg = (
         <svg style={style}>
-          <MirrorBottomLeft withLight={false} />
+          <MirrorBottomLeft />
         </svg>
       );
     } else if (val == 5) {
       svg = (
         <svg style={style}>
-          <MirrorTopRight withLight={false} />
+          <MirrorTopRight />
         </svg>
       );
     }

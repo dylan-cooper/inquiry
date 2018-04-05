@@ -2,14 +2,13 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { DragSource } from 'react-dnd'
 import ItemTypes from './ItemTypes'
-import { move } from './Game'
+import { move, remove } from './Game'
 
 import MirrorBottomRight from './MirrorBottomRight';
 import MirrorBottomLeft from './MirrorBottomLeft';
 import MirrorTopLeft from './MirrorTopLeft';
 import MirrorTopRight from './MirrorTopRight';
-
-
+import LightSource from './LightSource';
 
 const source = {
 	beginDrag() {
@@ -19,11 +18,18 @@ const source = {
   endDrag(props, monitor) {
     const dropResult = monitor.getDropResult();
     if (dropResult) {
-      const oldX = props.x;
-      const oldY = props.y;
-      const newX = dropResult.x;
-      const newY = dropResult.y;
-      move(oldX, oldY, newX, newY);
+      switch (dropResult.type) {
+        case 'square':
+          const oldX = props.x;
+          const oldY = props.y;
+          const newX = dropResult.x;
+          const newY = dropResult.y;
+          move(oldX, oldY, newX, newY);
+          break;
+        case 'garbage':
+          remove(props.x, props.y);
+          break;
+      }
     }
   },
 }
@@ -93,6 +99,10 @@ export default class Movable extends Component {
         <svg style={style}>
           <MirrorTopRight withLight={false} />
         </svg>
+      );
+    } else if (val == 6) {
+      svg = (
+        <LightSource />
       );
     }
     

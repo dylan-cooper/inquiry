@@ -11,7 +11,7 @@ const squareTarget = {
 	},
 
 	drop(props) {
-    return { x: props.x, y: props.y };
+    return { type: 'square', x: props.x, y: props.y };
 	},
 
 }
@@ -24,7 +24,7 @@ function collect(connect, monitor) {
 	}
 }
 
-@DropTarget(ItemTypes.MOVABLE, squareTarget, collect)
+@DropTarget([ItemTypes.MOVABLE, ItemTypes.INVENTORY], squareTarget, collect)
 export default class BoardSquare extends Component {
 	static propTypes = {
 		x: PropTypes.number.isRequired,

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 export default class MirrorTopLeft extends Component {
   static propTypes = {
-    withLight: PropTypes.bool.isRequired
+    withLight: PropTypes.bool
   }
 
   render() {
