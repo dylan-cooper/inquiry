@@ -1,13 +1,45 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { toggleLight } from './Game';
 
 
 export default class LightSource extends Component {
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  static propTypes = {
+    x: PropTypes.number.isRequired,
+    y: PropTypes.number.isRequired,
+    direction: PropTypes.string.isRequired,
+  }
+
+  handleClick(e) {
+    toggleLight(this.props.x, this.props.y);
+  }
 
   render() {
+    const { direction } = this.props;
+    var transform = '';
+    switch(direction) {
+      case 'up':
+        transform = 'rotate(0,256,256)';
+        break;
+      case 'down':
+        transform = 'rotate(180,256,256)';
+        break;
+      case 'right':
+        transform = 'rotate(90,256,256)';
+        break;
+      case 'left':
+        transform = 'rotate(270,256,256)';
+        break;
+    }
+
     return (
-      <svg version="1.1" x="0px" y="0px" viewBox="0 0 512 512" style={{enableBackground:"new 0 0 512 512"}}>
-        <g transform="rotate(90,256,256)">
+      <svg onClick={this.handleClick} version="1.1" x="0px" y="0px" viewBox="0 0 512 512" style={{enableBackground:"new 0 0 512 512"}}>
+        <g transform={transform}>
           <g>
             <path style={{fill:'#5A5D6F'}} d="M291.31,512H220.69c-4.875,0-8.828-3.953-8.828-8.828v-44.138h88.276v44.138 C300.138,508.047,296.185,512,291.31,512z"/>
             <path style={{fill:'#5A5D6F'}} d="M334.098,61.793H177.902c-5.372,0-9.498-4.758-8.739-10.076l6.305-44.138 C176.09,3.23,179.815,0,184.207,0h143.584c4.393,0,8.118,3.23,8.739,7.58l6.305,44.138 C343.596,57.035,339.469,61.793,334.098,61.793z"/>

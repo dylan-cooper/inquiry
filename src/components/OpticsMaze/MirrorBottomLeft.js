@@ -21,15 +21,19 @@ export default class MirrorBottomLeft extends Component {
 
     if (this.props.withLight) {
       return (
-        <g>
-          <line x1={35} y1={-2} x2={35} y2={35} style={lightLineStyle}/>
-          <line x1={72} y1={35} x2={35} y2={35} style={lightLineStyle}/>
-          <polygon fill={mirrorColor} points={trianglePoints} />
-        </g>
+        <svg>
+          <g>
+            <line x1={35} y1={-2} x2={35} y2={35} style={lightLineStyle}/>
+            <line x1={72} y1={35} x2={35} y2={35} style={lightLineStyle}/>
+            <polygon fill={mirrorColor} points={trianglePoints} />
+          </g>
+        </svg>
       );
     } else {
       return (
-        <polygon fill={mirrorColor} points={trianglePoints} />
+        <svg>
+          <polygon fill={mirrorColor} points={trianglePoints} />
+        </svg>
       );
     }
 

@@ -5,9 +5,16 @@ import Square from './Square'
 import ItemTypes from './ItemTypes'
 import Movable from './Movable';
 
+import MirrorBottomRight from './MirrorBottomRight';
+import MirrorBottomLeft from './MirrorBottomLeft';
+import MirrorTopLeft from './MirrorTopLeft';
+import MirrorTopRight from './MirrorTopRight';
+import LightSource from './LightSource';
+import LightBeam from './LightBeam';
+
 const squareTarget = {
 	canDrop(props) {
-    return props.val == 0;
+    return props.val == 0 || props.val == 10 || props.val == 11;
 	},
 
 	drop(props) {
@@ -54,7 +61,6 @@ export default class BoardSquare extends Component {
 
 	render() {
 		const { x, y, val, connectDropTarget, isOver, canDrop } = this.props;
-		const black = val == 1;
 
     const style = {
       position: 'relative',
@@ -62,9 +68,55 @@ export default class BoardSquare extends Component {
       height: '100%',
     };
 
+    var black = false;
     var child = null;
-    if (val >= 2) {
-      child = (<Movable val={val} x={x} y={y}/>);
+    switch(val) {
+      case 1:
+        black = true;
+        break;
+      case 2:
+        child = (<Movable x={x} y={y}><MirrorBottomRight /></Movable>)
+        break;
+      case 3:
+        child = (<Movable x={x} y={y}><MirrorTopLeft /></Movable>)
+        break;
+      case 4:
+        child = (<Movable x={x} y={y}><MirrorBottomLeft /></Movable>)
+        break;
+      case 5:
+        child = (<Movable x={x} y={y}><MirrorTopRight /></Movable>)
+        break;
+      case 6:
+        child = (<LightSource x={x} y={y} direction="down" />)
+        break;
+      case 7:
+        child = (<LightSource x={x} y={y} direction="up" />)
+        break;
+      case 8:
+        child = (<LightSource x={x} y={y} direction="right" />)
+        break;
+      case 9:
+        child = (<LightSource x={x} y={y} direction="left" />)
+        break;
+      case 10:
+        child = (<LightBeam direction="vertical" />)
+        break;
+      case 11:
+        child = (<LightBeam direction="horizontal" />)
+        break;
+      case 12:
+        child = (<Movable x={x} y={y}><MirrorBottomRight withLight/></Movable>)
+        break;
+      case 13:
+        child = (<Movable x={x} y={y}><MirrorTopLeft withLight/></Movable>)
+        break;
+      case 14:
+        child = (<Movable x={x} y={y}><MirrorBottomLeft withLight/></Movable>)
+        break;
+      case 15:
+        child = (<Movable x={x} y={y}><MirrorTopRight withLight/></Movable>)
+        break;
+    
     }
 
 		return connectDropTarget(

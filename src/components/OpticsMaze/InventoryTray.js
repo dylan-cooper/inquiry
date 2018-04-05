@@ -22,6 +22,7 @@ export default class InventoryTray extends Component {
 
     return (
       <div style={style}>
+        <div>Click a flashlight to turn it on.</div>
         <div>
           Choose a mirror and drag it onto the maze!
         </div>

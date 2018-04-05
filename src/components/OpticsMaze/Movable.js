@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { DragSource } from 'react-dnd'
 import ItemTypes from './ItemTypes'
-import { move, remove } from './Game'
+import { move, remove, turnOffLights } from './Game'
 
 import MirrorBottomRight from './MirrorBottomRight';
 import MirrorBottomLeft from './MirrorBottomLeft';
@@ -12,6 +12,7 @@ import LightSource from './LightSource';
 
 const source = {
 	beginDrag() {
+    turnOffLights()
 		return {}
 	},
 
@@ -50,11 +51,11 @@ export default class Movable extends Component {
     isDragging: PropTypes.bool.isRequired,
     x: PropTypes.number.isRequired,
     y: PropTypes.number.isRequired,
-    val: PropTypes.number.isRequired,
+    children: PropTypes.node,
   }
     
   render() {
-    const { connectDragSource, isDragging, val } = this.props;
+    const { connectDragSource, isDragging, children } = this.props;
     const style = {
       width: '100%',
       height: '100%',
@@ -63,58 +64,11 @@ export default class Movable extends Component {
       margin: 0
     };
 
-    const mirrorColor = '#c0c0c0';
-    const mirrorLineStyle = {
-      stroke: '#c0c0c0',
-      strokeWidth: 4,
-    };
-
-    const lightLineStyle = {
-      stroke: '#00c0c0',
-      strokeWidth: 10,
-    };
-    //const img = this.getImage();
-    var svg = null;
-
-    if (val == 2) {
-      svg = (
-        <svg style={style}>
-          <MirrorBottomRight withLight={false}/>
-        </svg>
-      );
-    } else if (val == 3) {
-      svg = (
-        <svg style={style}>
-          <MirrorTopLeft withLight={false} />
-        </svg>
-      );
-    } else if (val == 4) {
-      svg = (
-        <svg style={style}>
-          <MirrorBottomLeft withLight={false} />
-        </svg>
-      );
-    } else if (val == 5) {
-      svg = (
-        <svg style={style}>
-          <MirrorTopRight withLight={false} />
-        </svg>
-      );
-    } else if (val == 6) {
-      svg = (
-        <LightSource />
-      );
-    }
-    
     return connectDragSource(
       <div style={style}>
-        {svg}
+        {children}
       </div>
     );
-    /*
-    return connectDragSource(
-      <img src={img} style={style} />
-    );
-    */
+
   }
 }

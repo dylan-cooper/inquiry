@@ -21,15 +21,19 @@ export default class MirrorTopRight extends Component {
 
     if (this.props.withLight) {
       return (
+        <svg>
         <g>
           <line x1={35} y1={72} x2={35} y2={35} style={lightLineStyle}/>
           <line x1={-2} y1={35} x2={35} y2={35} style={lightLineStyle}/>
           <polygon fill={mirrorColor} points={trianglePoints} />
         </g>
+        </svg>
       );
     } else {
       return (
+        <svg>
         <polygon fill={mirrorColor} points={trianglePoints} />
+        </svg>
       );
     }
 

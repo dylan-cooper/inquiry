@@ -63,27 +63,19 @@ export default class InventoryItem extends Component {
 
     if (val == 2) {
       svg = (
-        <svg style={style}>      
           <MirrorBottomRight />
-        </svg>
       );
     } else if (val == 3) {
       svg = (
-        <svg style={style}>
           <MirrorTopLeft />
-        </svg>
       );
     } else if (val == 4) {
       svg = (
-        <svg style={style}>
           <MirrorBottomLeft />
-        </svg>
       );
     } else if (val == 5) {
       svg = (
-        <svg style={style}>
           <MirrorTopRight />
-        </svg>
       );
     }
     
