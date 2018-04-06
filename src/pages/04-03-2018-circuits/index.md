@@ -4,6 +4,7 @@ date: "2018-04-03T19:47:32-0400"
 title: "Circuits!"
 ---
 
+<youtube-video videoId="QrwUYbVkfkQ"></youtube-video>
 
 What is electricity?  You already know that electricity is the 
 thing we use to power everything from the lights in our house to 

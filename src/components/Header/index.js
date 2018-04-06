@@ -23,7 +23,7 @@ const Header = () => (
                     textDecoration: 'none',
                     display: 'block'
                 }}>
-                Inquiry
+                Curious Gryphs! 
             </Link>
         </div>
     </div>

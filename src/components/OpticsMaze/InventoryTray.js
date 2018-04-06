@@ -10,7 +10,8 @@ export default class InventoryTray extends Component {
     //const {isOver, canDrop} = this.props;
     const style={
       //display: 'flex',
-      margin: 5,
+      marginTop: 5,
+      marginBottom: 5,
       border: 'black solid 2px',
       textAlign: 'center',
     };

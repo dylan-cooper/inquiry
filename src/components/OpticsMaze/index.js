@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
 import { DragDropContext } from 'react-dnd'
 import HTML5Backend from 'react-dnd-html5-backend'
+import TouchBackend from 'react-dnd-touch-backend'
+import isMobile from 'is-mobile';
 import Board from './Board';
 import InventoryTray from './InventoryTray';
 import { observe } from './Game';
 
+var backend = isMobile() ? TouchBackend : HTML5Backend
+  
 
-@DragDropContext(HTML5Backend)
-export default class ChessboardTutorialApp extends Component {
+
+@DragDropContext(backend)
+export default class OpticsMaze extends Component {
 	constructor(props) {
 		super(props)
 		this.unobserve = observe(this.handleChange.bind(this))
