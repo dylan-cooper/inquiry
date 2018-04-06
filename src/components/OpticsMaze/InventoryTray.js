@@ -20,6 +20,8 @@ export default class InventoryTray extends Component {
     const innerStyle = {
       float: 'left',
       display: 'flex',
+      flexDirection: 'row',
+      width: '100%',
     };
 
     return (
@@ -34,8 +36,7 @@ export default class InventoryTray extends Component {
             <InventoryItem val={3} />
             <InventoryItem val={4} />
             <InventoryItem val={5} />
-          </div>
-          <div style={{float:"right", display: "flex"}}>
+            <div style={{flex: 1}}/>
             <Next />
             <GarbageBin />
           </div>
