@@ -44,7 +44,7 @@ puts pressure on the extra negative charge, making it want
 to escape.  But it is has nowhere to go.  This scenario has 
 surely happened to you before.  Have you ever poked your 
 friend in the face (assuming it’s normal behavior to poke a 
-friend’s face) and gotten shocked?  When you come into the contact 
+friend’s face) and gotten shocked?  When you come into contact 
 with your friend, you provide the extra charge a way to 
 escape – it doesn’t hasten!  The charge jumps across your 
 finger onto your friend as it desperately tries to get as 

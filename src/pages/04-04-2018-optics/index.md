@@ -45,3 +45,5 @@ colours change to orange, then yellow, green blue, indigo, and finally violet
 with the smallest visible wavelength of about 400nm.
 
 ![Wavelength Colors](wavelength-colors.png)
+
+[Try the optics maze activity!](optics-maze)
