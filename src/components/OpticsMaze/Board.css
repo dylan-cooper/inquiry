@@ -4,3 +4,37 @@
     display: flex;
     flex-wrap: wrap;
 }
+
+.BoardWrapper {
+  height: 600px;
+  width: 600px; 
+}
+
+@media (max-width: 960px) {
+  .BoardWrapper {
+    height: 500px;
+    width: 500px; 
+  }
+}
+
+@media (max-width: 550px) {
+  .BoardWrapper {
+    height: 400px;
+    width: 400px; 
+  }
+}
+
+@media (max-width: 450px) {
+  .BoardWrapper {
+    height: 300px;
+    width: 300px; 
+  }
+}
+
+@media (max-width: 350px) {
+  .BoardWrapper {
+    height: 200px;
+    width: 200px; 
+  }
+}
+

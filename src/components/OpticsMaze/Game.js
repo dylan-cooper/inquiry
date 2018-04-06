@@ -1,14 +1,7 @@
+import { getRandomBoard } from './BoardFactory'
+
 let observer = null;
-let board = [
-  [6, 0, 2, 3, 1, 1, 1, 1],
-  [1, 1, 1, 0, 1, 0, 0, 0],
-  [8, 1, 0, 0, 1, 0, 1, 0],
-  [0, 1, 0, 1, 1, 0, 1, 0],
-  [0, 1, 0, 0, 1, 0, 1, 0],
-  [0, 1, 1, 0, 0, 0, 1, 0],
-  [0, 0, 1, 1, 1, 1, 1, 0],
-  [1, 5, 5, 0, 0, 2, 4, 4],
-];
+let board = getRandomBoard();
 let lights = [];
 
 function emitChange() {

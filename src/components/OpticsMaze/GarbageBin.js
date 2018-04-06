@@ -27,8 +27,8 @@ export default class GarbageBin extends Component {
   render() {
     const { isOver, canDrop, connectDropTarget } = this.props;
     const style = {
-      height: '70px',
-      width: '70px',
+      height: '100%',
+      width: '100%',
       margin: 2,
     };
 

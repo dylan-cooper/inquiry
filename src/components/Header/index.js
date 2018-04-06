@@ -13,7 +13,8 @@ const Header = () => (
                 margin: '0 auto',
                 maxWidth: 960,
                 padding: '2rem 1rem',
-                fontSize: 80,
+                fontSize: 70,
+                lineHeight: 1,
                 textAlign: 'center',
             }}>
             <Link

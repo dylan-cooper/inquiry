@@ -33,21 +33,23 @@ export default class OpticsMaze extends Component {
 
 	render() {
 		const { board } = this.state;
-    const height = (70 * 8) + 4;
-    const width = (70 * 8) + 4;
+//    const height = (100 * 8) + 4;
+//    const width = (100 * 8) + 4;
+    const width = '60vw';
+    const height = width;
     const style = {
-      width,
-      height,
+      //width,
+      //height,
       border: '2px solid black',
       margin: 'auto',
     };
 
 		return (
 			<div>
-				<div style={style} >
+				<div className={"BoardWrapper"} style={style} >
 					<Board board={board} />
-          <InventoryTray />
 				</div>
+        <InventoryTray />
 			</div>
 		);
 	}

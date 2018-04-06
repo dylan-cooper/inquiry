@@ -16,13 +16,13 @@ export default class LightBeam extends Component{
 
     if (direction == 'vertical') {
       return (
-        <svg>
+        <svg viewBox="0 0 70 70 ">
           <line x1={35} y1={-2} x2={35} y2={72} style={lightLineStyle} />
         </svg>
       );
     } else {
       return (
-        <svg>
+        <svg viewBox="0 0 70 70 ">
           <line x1={-2} y1={35} x2={72} y2={35} style={lightLineStyle} />
         </svg>
       );

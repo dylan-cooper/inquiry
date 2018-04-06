@@ -47,8 +47,8 @@ export default class InventoryItem extends Component {
   render() {
     const { connectDragSource, isDragging, val } = this.props;
     const style = {
-      width: '70px',
-      height: '70px',
+      width: '100%',
+      height: '100%',
       cursor: 'move',
       opacity: isDragging ? 0.5 : 1,
       margin: 2,
