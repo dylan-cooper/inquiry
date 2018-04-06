@@ -11,19 +11,30 @@ the cellphones in our hands.  The discovery of electricity
 revolutionized the world; it is the seed from which nearly 
 everything in modern society is built.  But what IS it?  Well, 
 we can think of electricity as a form of energy that uses 
-charges to generate power.  Charge is a physical property of 
+charges to generate power.  
+
+Charge is a physical property of 
 matter and the fundamental unit of electricity.  Charge can be 
-positive or negative; a lack of charge is defined as neutral.  
-Now, charges interact with each other through via the 
-electromagnetic force.  They experience a pushing or pulling force 
+positive or negative; a lack of charge is defined as neutral.
+
+Charges interact with each other through the 
+*electromagnetic force*.  They experience a pushing or pulling force 
 depending on the kind of charge they are interacting with.  When 
 we have two charges of the same type, they interact by pushing 
 themselves away from one another.  This goes to say that 
 positive-positive charges and negative-negative charges repel 
-each other.  What do you think happens when the charges are 
+each other.  
+
+![Repel-Negative](repel-negative.png)
+
+![Repel-Positive](repel-positive.png)
+
+What do you think happens when the charges are 
 different types?
 
 As you may have guessed, they are attracted to each other! 
+
+![Attract](attract.png)
 
 Static electricity is when one type of charge builds up in an 
 object, leading to an imbalance in the total charge.  If we have 
