@@ -48,8 +48,10 @@ export default class OpticsMaze extends Component {
 			<div>
 				<div className={"BoardWrapper"} style={style} >
 					<Board board={board} />
+        </div>
+        <div>
+          <InventoryTray />
 				</div>
-        <InventoryTray />
 			</div>
 		);
 	}
