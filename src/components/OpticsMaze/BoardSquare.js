@@ -11,6 +11,7 @@ import MirrorTopLeft from './MirrorTopLeft';
 import MirrorTopRight from './MirrorTopRight';
 import LightSource from './LightSource';
 import LightBeam from './LightBeam';
+import LightFilter from './LightFilter';
 
 const squareTarget = {
 	canDrop(props) {
@@ -68,6 +69,8 @@ export default class BoardSquare extends Component {
       height: '100%',
     };
 
+    const lightFilterStart = 40;
+
     var black = false;
     var child = null;
     switch(val) {
@@ -116,6 +119,25 @@ export default class BoardSquare extends Component {
       case 15:
         child = (<Movable x={x} y={y}><MirrorTopRight withLight/></Movable>)
         break;
+      case lightFilterStart:
+        child = (<Movable x={x} y={y}><LightFilter direction="vertical" color="#f00" /></Movable>)
+        break;
+      case lightFilterStart + 1:
+        child = (<Movable x={x} y={y}><LightFilter direction="horizontal" color="#f00" /></Movable>)
+        break;
+      case lightFilterStart + 2:
+        child = (<Movable x={x} y={y}><LightFilter direction="vertical" color="#0f0" /></Movable>)
+        break;
+      case lightFilterStart + 3:
+        child = (<Movable x={x} y={y}><LightFilter direction="horizontal" color="#0f0" /></Movable>)
+        break;
+      case lightFilterStart + 4:
+        child = (<Movable x={x} y={y}><LightFilter direction="vertical" color="#00f" /></Movable>)
+        break;
+      case lightFilterStart + 5:
+        child = (<Movable x={x} y={y}><LightFilter direction="horizontal" color="#00f" /></Movable>)
+        break;
+    
     
     }
 

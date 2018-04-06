@@ -9,6 +9,8 @@ Have you ever wondered what light is made of? This is actually
 quite a complicated question, so for now we will describe light as 
 a type of energy that moves like a wave.
 
+## Light as a Wave
+
 In physics, a wave refers to a disturbance that transfers energy 
 between different locations. Light falls under the category of 
 *electromagnetic* waves, which don’t require a medium or matter to 
@@ -46,11 +48,24 @@ with the smallest visible wavelength of about 400nm.
 
 ![Wavelength Colors](wavelength-colors.png)
 
+Now that you understand how light acts as a wave, check out the videos below to
+see how this light interacts with the things around us.
+
+<hr />
+
+## Reflection
 
 <youtube-video videoId="qTD-SPze8UE"></youtube-video>
 
+<hr />
+
+## Refraction
+
 <youtube-video videoId="oXPOzZUjGRw"></youtube-video>
 
+<hr />
 
-[Try the optics maze activity!](optics-maze)
+## Activity
+
+<optics-maze></optics-maze>
 

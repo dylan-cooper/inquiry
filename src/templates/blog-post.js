@@ -2,11 +2,13 @@ import React from "react";
 import Helmet from "react-helmet";
 import RehypeReact from 'rehype-react';
 import YouTubeVideo from '../components/YouTubeVideo';
+import OpticsMaze from '../components/OpticsMaze';
 
 const renderAst = new RehypeReact({
     createElement: React.createElement,
     components: {
         'youtube-video': YouTubeVideo,
+        'optics-maze': OpticsMaze
     }
 }).Compiler;
 

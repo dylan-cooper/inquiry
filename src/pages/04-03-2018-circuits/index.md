@@ -13,6 +13,8 @@ everything in modern society is built.  But what IS it?  Well,
 we can think of electricity as a form of energy that uses 
 charges to generate power.  
 
+## Charges and Current
+
 Charge is a physical property of 
 matter and the fundamental unit of electricity.  Charge can be 
 positive or negative; a lack of charge is defined as neutral.
@@ -36,8 +38,8 @@ As you may have guessed, they are attracted to each other!
 
 ![Attract](attract.png)
 
-Static electricity is when one type of charge builds up in an 
-object, leading to an imbalance in the total charge.  If we have 
+When one type of charge builds up in an 
+object, an imbalance of charge is created.  If we have 
 many more negative charges than positive charges, the negative 
 charges start to push on each other harder and harder.  This force 
 puts pressure on the extra negative charge, making it want 
@@ -46,7 +48,7 @@ surely happened to you before.  Have you ever poked your
 friend in the face (assuming it’s normal behavior to poke a 
 friend’s face) and gotten shocked?  When you come into contact 
 with your friend, you provide the extra charge a way to 
-escape – it doesn’t hasten!  The charge jumps across your 
+escape – it doesn’t take long!  The charge jumps across your 
 finger onto your friend as it desperately tries to get as 
 far away as possible.  We feel this jump as a shock.
 
@@ -57,6 +59,18 @@ concept in electricity: current.  Current is simply defined
 as the motion of electric charge -  it is a flow of energy 
 that is used in nearly every kind of electrical application.
 
+Now that you understand how electrical charges move to create a current,
+ check out the videos below to
+see how we can use this current to power circuits.
+
+<hr />
+
+## Ohm's Law
+
 <youtube-video videoId="IiOkOIY8hMo"></youtube-video>
+
+<hr />
+
+## Building a circuit
 
 <youtube-video videoId="5LXLNaBx07E"></youtube-video>

@@ -4,3 +4,8 @@ html {
 body {
     height: 100%;
 }
+
+.blog-post-preview {
+  border: 'rebeccapurple solid 5px';
+  border-radius: '10px';
+}
