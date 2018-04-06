@@ -4,7 +4,6 @@ date: "2018-04-03T19:47:32-0400"
 title: "Circuits!"
 ---
 
-<youtube-video videoId="QrwUYbVkfkQ"></youtube-video>
 
 What is electricity?  You already know that electricity is the 
 thing we use to power everything from the lights in our house to 
@@ -58,3 +57,6 @@ concept in electricity: current.  Current is simply defined
 as the motion of electric charge -  it is a flow of energy 
 that is used in nearly every kind of electrical application.
 
+<youtube-video videoId="IiOkOIY8hMo"></youtube-video>
+
+<youtube-video videoId="5LXLNaBx07E"></youtube-video>

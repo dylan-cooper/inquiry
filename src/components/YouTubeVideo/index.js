@@ -1,5 +1,5 @@
 import React from 'react';
-import Iframe from 'react-iframe';
+import IFrame from '../IFrame';
 
 export default class YouTubeVideo extends React.Component {
     static defaultProps = {
@@ -12,10 +12,14 @@ export default class YouTubeVideo extends React.Component {
         const width = this.props.width
         const height = this.props.height
         const url = `https://www.youtube.com/embed/${this.props.videoid}`
+        const style = {
+          maxWidth: '100%',
+        
+        }
 
         return (
             <span style={{display: 'block', textAlign: 'center'}}>
-                <Iframe url={url} width={width} height={height} position="relative" display="initial" allowFullScreen/>
+                <IFrame url={url}  width={width} height={height} position="relative" display="initial" allowFullScreen/>
             </span>
         );
     }

@@ -46,4 +46,11 @@ with the smallest visible wavelength of about 400nm.
 
 ![Wavelength Colors](wavelength-colors.png)
 
+
+<youtube-video videoId="qTD-SPze8UE"></youtube-video>
+
+<youtube-video videoId="oXPOzZUjGRw"></youtube-video>
+
+
 [Try the optics maze activity!](optics-maze)
+
