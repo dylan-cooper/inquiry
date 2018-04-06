@@ -29,6 +29,7 @@ export default class GarbageBin extends Component {
     const style = {
       maxWidth: 70,
       maxHeight: 70,
+      minWidth: 30,
       height: '100%',
       width: '100%',
       margin: 2,

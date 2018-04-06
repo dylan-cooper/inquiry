@@ -49,6 +49,7 @@ export default class InventoryItem extends Component {
     const style = {
       maxWidth: 70,
       maxHeight: 70,
+      minWidth: 30,
       width: '100%',
       height: '100%',
       cursor: 'move',
