@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { lightColor, mirrorColor } from './Constants'
 
 export default class LightBeam extends Component{
   static propTypes = {
@@ -8,7 +9,7 @@ export default class LightBeam extends Component{
 
   render() {
     const { direction } = this.props;
-    const lightColor = '#00c0c0';
+
     const lightLineStyle = {
       stroke: lightColor,
       strokeWidth: 10,

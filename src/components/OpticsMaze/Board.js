@@ -9,13 +9,15 @@ export default class Board extends Component {
       board: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.number.isRequired).isRequired).isRequired,
     }
 
-    renderSquare(i) {
-      const x = i % 8;
-      const y = Math.floor(i / 8);
+    renderSquare(i, size) {
+      const x = i % size;
+      const y = Math.floor(i / size);
       const val = this.props.board[x][y];
 
+      const percentage = (100 / size) + '%';
+
       return (
-        <div key={i} style={{ width: '12.5%', height: '12.5%' }}>
+        <div key={i} style={{ width: percentage, height: percentage }}>
           <BoardSquare x={x} y={y} val={val} />
         </div>
       );
@@ -26,10 +28,13 @@ export default class Board extends Component {
     }
 
     render() {
-      const squares = []
-        for (let i = 0; i < 64; i += 1) {
-          squares.push(this.renderSquare(i))
-        }
+      const squares = [];
+      // assume it's a square
+      const size = this.props.board.length;
+
+      for (let i = 0; i < size * size; i += 1) {
+        squares.push(this.renderSquare(i, size))
+      }
 
       return <div className="Board">{squares}</div>
     }

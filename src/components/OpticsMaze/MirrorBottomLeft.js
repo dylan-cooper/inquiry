@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { lightColor, mirrorColor } from './Constants'
 
 export default class MirrorBottomLeft extends Component {
   static propTypes = {
@@ -9,8 +10,6 @@ export default class MirrorBottomLeft extends Component {
   render() {
     const { withLight } = this.props;
 
-    const mirrorColor = '#c0c0c0';
-    const lightColor = '#00c0c0';
 
     const lightLineStyle = {
       stroke: lightColor,

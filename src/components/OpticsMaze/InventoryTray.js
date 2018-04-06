@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import InventoryItem from './InventoryItem';
 import GarbageBin from './GarbageBin';
+import Next from './Next';
 
 export default class InventoryTray extends Component {
   static propTypes = {
@@ -35,6 +36,7 @@ export default class InventoryTray extends Component {
             <InventoryItem val={5} />
           </div>
           <div style={{float:"right", display: "flex"}}>
+            <Next />
             <GarbageBin />
           </div>
         </div>

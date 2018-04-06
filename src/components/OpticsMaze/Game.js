@@ -1,7 +1,7 @@
-import { getRandomBoard } from './BoardFactory'
+import { getNextBoard } from './BoardFactory'
 
 let observer = null;
-let board = getRandomBoard();
+let board = getNextBoard();
 let lights = [];
 
 function emitChange() {
@@ -16,6 +16,11 @@ export function observe(o) {
   return () => {
     observer = null
   };
+}
+
+export function changeBoard() {
+  board = getNextBoard();
+  emitChange();
 }
 
 export function move(fromX, fromY, toX, toY) {
@@ -38,6 +43,7 @@ export function remove(fromX, fromY) {
 function drawForLight(sourceX, sourceY, boardClone) {
   var x = sourceX;
   var y = sourceY;
+  const size = boardClone.length;
 
   // down: 0, up: 1, right: 2, left: 3
   var direction = (boardClone[x][y] - 6) % 4;
@@ -51,12 +57,10 @@ function drawForLight(sourceX, sourceY, boardClone) {
       case 3: x = x - 1; break;
     }
 
-    console.log(x, y)
-    if (x < 0 || y < 0 || x > 7 || y > 7) {
+    if (x < 0 || y < 0 || x > size - 1 || y > size - 1) {
       break;
     }
 
-    console.log(boardClone[x][y]);
     if (boardClone[x][y] == 0) {
       boardClone[x][y] += 10 + Math.floor(direction / 2);
     } else if (boardClone[x][y] == 2 && direction == 0) {
