@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 import { lightColor } from './Constants'
 
 export default class LightFilter extends Component {
@@ -10,7 +10,7 @@ export default class LightFilter extends Component {
   }
 
   render() {
-    const { color, direction, withLight } = this.props;
+    const { color, direction, withLight } = this.props
 
     const lightLineStyle = {
       stroke: lightColor,
@@ -35,6 +35,5 @@ export default class LightFilter extends Component {
         </svg>
       )
     }
-    
   }
 }

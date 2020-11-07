@@ -72,8 +72,8 @@ let boards = [
 var i = 0
 
 export function getNextBoard() {
-  var board = boards[i];
-  i = (i + 1) % boards.length;
+  var board = boards[i]
+  i = (i + 1) % boards.length
 
-  return JSON.parse(JSON.stringify(board)); 
+  return JSON.parse(JSON.stringify(board))
 }
