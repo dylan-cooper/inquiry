@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { DragSource } from 'react-dnd';
-import ItemTypes from './ItemTypes';
-import { add } from './Game';
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import { DragSource } from 'react-dnd'
+import ItemTypes from './ItemTypes'
+import { add } from './Game'
 
-import MirrorBottomRight from './MirrorBottomRight';
-import MirrorBottomLeft from './MirrorBottomLeft';
-import MirrorTopLeft from './MirrorTopLeft';
-import MirrorTopRight from './MirrorTopRight';
+import MirrorBottomRight from './MirrorBottomRight'
+import MirrorBottomLeft from './MirrorBottomLeft'
+import MirrorTopLeft from './MirrorTopLeft'
+import MirrorTopRight from './MirrorTopRight'
 
 const source = {
   beginDrag() {
@@ -15,16 +15,16 @@ const source = {
   },
 
   endDrag(props, monitor) {
-    const dropResult = monitor.getDropResult();
+    const dropResult = monitor.getDropResult()
     if (dropResult) {
       switch (dropResult.type) {
         case 'square':
-          add(props.val, dropResult.x, dropResult.y);
+          add(props.val, dropResult.x, dropResult.y)
         case 'garbage':
-          // do nothing
+        // do nothing
       }
     }
-  }
+  },
 }
 
 function collect(connect, monitor) {
@@ -35,8 +35,7 @@ function collect(connect, monitor) {
   }
 }
 
-@DragSource(ItemTypes.INVENTORY, source, collect)
-export default class InventoryItem extends Component {
+class InventoryItem extends Component {
   static propTypes = {
     connectDragSource: PropTypes.func.isRequired,
     connectDragPreview: PropTypes.func.isRequired,
@@ -45,7 +44,7 @@ export default class InventoryItem extends Component {
   }
 
   render() {
-    const { connectDragSource, isDragging, val } = this.props;
+    const { connectDragSource, isDragging, val } = this.props
     const style = {
       maxWidth: 70,
       maxHeight: 70,
@@ -55,37 +54,27 @@ export default class InventoryItem extends Component {
       cursor: 'move',
       opacity: isDragging ? 0.5 : 1,
       margin: 2,
-    };
+    }
 
     const lineStyle = {
       stroke: '#c0c0c0',
       strokeWidth: 5,
-    };
+    }
     //const img = this.getImage();
-    var svg = null;
+    var svg = null
 
     if (val == 2) {
-      svg = (
-          <MirrorBottomRight />
-      );
+      svg = <MirrorBottomRight />
     } else if (val == 3) {
-      svg = (
-          <MirrorTopLeft />
-      );
+      svg = <MirrorTopLeft />
     } else if (val == 4) {
-      svg = (
-          <MirrorBottomLeft />
-      );
+      svg = <MirrorBottomLeft />
     } else if (val == 5) {
-      svg = (
-          <MirrorTopRight />
-      );
+      svg = <MirrorTopRight />
     }
-    
-    return connectDragSource(
-      <div style={style}>
-        {svg}
-      </div>
-    );
+
+    return connectDragSource(<div style={style}>{svg}</div>)
   }
 }
+
+export default DragSource(ItemTypes.INVENTORY, source, collect)(InventoryItem);
